@@ -165,8 +165,8 @@ where
         {
             type Value = Spanned<T>;
 
-            fn expecting(&self, _formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
-                unreachable!()
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a map")
             }
 
             fn visit_map<V>(self, mut visitor: V) -> Result<Self::Value, V::Error>
